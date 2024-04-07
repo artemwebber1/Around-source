@@ -14,8 +14,6 @@ namespace Assets.Scripts.PlayerScripts
 
         public float TotalScores { get; private set; }
 
-        public bool IsImmortal { get; set; }
-
         #region Moving around
 
         [Header("Round moving")]
@@ -139,7 +137,7 @@ namespace Assets.Scripts.PlayerScripts
 
         private void Die()
         {
-            if (StateMachine.CurrentState != DeadState && !IsImmortal)
+            if (StateMachine.CurrentState != DeadState)
             {
                 StateMachine.SetState(DeadState);
             }
